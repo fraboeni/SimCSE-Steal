@@ -135,3 +135,5 @@ result
 .venv-cu11
 /data/qqp/qqp_test.csv
 /data/qqp/qqp_train.csv
+/data/flickr30k/results_20130124.token
+/data/flickr30k/flickr30k.csv
