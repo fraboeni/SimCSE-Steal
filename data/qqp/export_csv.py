@@ -12,7 +12,7 @@ test_data = pd.read_csv(
 print('test data: ', test_data)
 
 test_data_export = test_data[['question1', 'question2']]
-test_data_export.to_csv('qqp_test.csv', index=False, quoting=csv.QUOTE_ALL)
+test_data_export.to_csv('qqp_test.csv', index=False, quoting=csv.QUOTE_ALL, header=False)
 print('exported test')
 
 train_data = pd.read_csv(
@@ -21,6 +21,6 @@ train_data = pd.read_csv(
 print('train data: ', train_data)
 
 train_data_export = train_data[['question1', 'question2']]
-train_data_export.to_csv('qqp_train.csv', index=False, quoting=csv.QUOTE_ALL)
+train_data_export.to_csv('qqp_train.csv', index=False, quoting=csv.QUOTE_ALL, header=False)
 
 print('exported train')
