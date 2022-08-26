@@ -12,7 +12,7 @@
 eval "$(conda shell.bash hook)"
 
 # activate the correct environment
-conda activate /h/fraboeni/anaconda3/envs/reconst
+conda activate /h/fraboeni/anaconda3/envs/py35
 
 echo "Job started at $(date)"
 
@@ -33,8 +33,8 @@ export OMP_NUM_THREADS=8
 # python train.py \
 python -m torch.distributed.launch --nproc_per_node $NUM_GPU --master_port $PORT_ID train.py \
     --model_name_or_path bert-base-uncased \
-    --train_file data/qqp/qqp_train.csv \
-    --output_dir result/my-sup-simcse-bert-base-uncased-qqp \
+    --train_file /ssd003/home/fraboeni/data/flickr30k/flickr30k-train-samples-287825.csv \
+    --output_dir /ssd003/home/fraboeni/models/nlp-stealing/my-sup-simcse-bert-base-uncased-flickr30k-287825 \
     --num_train_epochs 3 \
     --per_device_train_batch_size 128 \
     --learning_rate 5e-5 \
