@@ -6,7 +6,7 @@
 
 python train.py \
     --model_name_or_path bert-base-uncased \
-    --train_file /ssd003/home/fraboeni/data/qqpqqp_train.csv \
+    --train_file /ssd003/home/fraboeni/data/qqp/qqp_train.csv \
     --output_dir /ssd003/home/fraboeni/models/nlp-stealing/my-sup-simcse-bert-base-uncased-qqp \
     --num_train_epochs 3 \
     --per_device_train_batch_size 128 \
