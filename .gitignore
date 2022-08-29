@@ -137,3 +137,8 @@ result
 /data/qqp/qqp_train.csv
 /data/flickr30k/results_20130124.token
 /data/flickr30k/flickr30k.csv
+/data/flickr30k/flickr30k-test-samples-50000.csv
+/data/flickr30k/flickr30k-test-samples-30000.csv
+/data/flickr30k/flickr30k-train-samples-267825.csv
+/data/flickr30k/flickr30k-train-samples-287825.csv
+/data/nli/nli_for_simcse.csv

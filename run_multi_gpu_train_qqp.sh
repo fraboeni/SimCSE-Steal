@@ -1,20 +1,4 @@
 #!/bin/bash
-#SBATCH --job-name=train_flickr30k50-new
-#SBATCH --output=train_flickr30k50-new.txt
-#SBATCH	--ntasks=8
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=20g
-#SBATCH --gres=gpu:4
-#SBATCH --qos=normal
-#SBATCH --partition=rtx6000
-
-# mitigates activation problems
-eval "$(conda shell.bash hook)"
-
-# activate the correct environment
-conda activate /h/fraboeni/anaconda3/envs/py35
-
-echo "Job started at $(date)"
 
 # In this example, we show how to train SimCSE using multiple GPU cards and PyTorch's distributed data parallel on supervised NLI dataset.
 # Set how many GPUs to use
@@ -33,10 +17,10 @@ export OMP_NUM_THREADS=8
 # python train.py \
 python -m torch.distributed.launch --nproc_per_node $NUM_GPU --master_port $PORT_ID train.py \
     --model_name_or_path bert-base-uncased \
-    --train_file /ssd003/home/fraboeni/data/flickr30k/flickr30k-train-samples-287825.csv \
-    --output_dir /ssd003/home/fraboeni/models/nlp-stealing/my-sup-simcse-bert-base-uncased-flickr30k-287825-15epochs-new \
-    --num_train_epochs 15 \
-    --per_device_train_batch_size 128 \
+    --train_file data/qqp/qqp_train.csv \
+    --output_dir result/my-sup-simcse-bert-base-uncased-qqp \
+    --num_train_epochs 3 \
+    --per_device_train_batch_size 64 \
     --learning_rate 5e-5 \
     --max_seq_length 32 \
     --evaluation_strategy steps \
@@ -50,4 +34,3 @@ python -m torch.distributed.launch --nproc_per_node $NUM_GPU --master_port $PORT
     --do_eval \
     --fp16 \
     "$@"
-echo "Job ended at $(date)"
