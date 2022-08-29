@@ -73,10 +73,10 @@ def main():
         args.device = torch.device('cpu')
         args.gpu_index = -1
 
-    # Import our models. The package will take care of downloading the models automatically
+    # Import victim model and tokenizer
     tokenizer = AutoTokenizer.from_pretrained("princeton-nlp/sup-simcse-bert-base-uncased")
-    #model = AutoModel.from_pretrained("princeton-nlp/sup-simcse-bert-base-uncased")
-    model = AutoModel.from_pretrained("/h/321/fraboeni/code/SimCSE-Steal/result/my-sup-simcse-bert-base-uncased-qqp")
+    model = AutoModel.from_pretrained("princeton-nlp/sup-simcse-bert-base-uncased")
+    #model = AutoModel.from_pretrained("/h/321/fraboeni/code/SimCSE-Steal/result/my-sup-simcse-bert-base-uncased-qqp")
 
     # Tokenize input texts
     texts = [
