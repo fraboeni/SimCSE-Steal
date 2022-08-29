@@ -34,8 +34,8 @@ export OMP_NUM_THREADS=8
 python -m torch.distributed.launch --nproc_per_node $NUM_GPU --master_port $PORT_ID train.py \
     --model_name_or_path bert-base-uncased \
     --train_file /ssd003/home/fraboeni/data/qqp/qqp_train.csv \
-    --output_dir /ssd003/home/fraboeni/models/nlp-stealing/my-sup-simcse-bert-base-uncased-qqp \
-    --num_train_epochs 5 \
+    --output_dir /ssd003/home/fraboeni/models/nlp-stealing/my-sup-simcse-bert-base-uncased-qqp-15epochs \
+    --num_train_epochs 15 \
     --per_device_train_batch_size 128 \
     --learning_rate 5e-5 \
     --max_seq_length 32 \

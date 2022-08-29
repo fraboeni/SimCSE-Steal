@@ -32,10 +32,10 @@ export OMP_NUM_THREADS=8
 # If you only want to use one card, uncomment the following line and comment the line with "torch.distributed.launch"
 # python train.py \
 python -m torch.distributed.launch --nproc_per_node $NUM_GPU --master_port $PORT_ID train.py \
-    --model_name_or_path /ssd003/home/fraboeni/models/nlp-stealing/my-sup-simcse-bert-base-uncased-flickr30k-287825 \
+    --model_name_or_path bert-base-uncased \
     --train_file /ssd003/home/fraboeni/data/flickr30k/flickr30k-train-samples-287825.csv \
-    --output_dir /ssd003/home/fraboeni/models/nlp-stealing/my-sup-simcse-bert-base-uncased-flickr30k-287825-5epochs \
-    --num_train_epochs 2 \
+    --output_dir /ssd003/home/fraboeni/models/nlp-stealing/my-sup-simcse-bert-base-uncased-flickr30k-287825-15epochs-new \
+    --num_train_epochs 15 \
     --per_device_train_batch_size 128 \
     --learning_rate 5e-5 \
     --max_seq_length 32 \
