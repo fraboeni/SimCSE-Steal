@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=train_qqp
-#SBATCH --output=train_qqp.txt
+#SBATCH --job-name=train_qqp_new
+#SBATCH --output=train_qqp_new.txt
 #SBATCH	--ntasks=8
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=20g

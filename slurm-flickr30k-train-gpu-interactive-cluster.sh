@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=train_flickr30k50
-#SBATCH --output=train_flickr30k50-continued.txt
+#SBATCH --job-name=train_flickr30k30_new
+#SBATCH --output=train_flickr30k30_new.txt
 #SBATCH	--ntasks=8
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=20g
